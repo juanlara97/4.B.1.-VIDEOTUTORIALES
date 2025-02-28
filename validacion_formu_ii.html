@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de formularios 2</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        #caja{
+            background-color: gray;
+            border-radius: 15px;
+            padding: 20px;
+            display: flex;
+        }
+        label{
+            width: 30%;
+            display: inline-block
+        }
+        input{
+            width: 70%;
+            border-radius: 5px;
+            border-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="cajon">
+        <div id="caja">
+            <form action="procesa.php" onsubmit="return validarFormulario()">
+            <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre">
+            <label for="apellido">Apellidos:</label>
+                <input type="text" id="apellido" name="apellido">
+            <br>
+            <label for="edad">Edad:</label>
+                <input type="text" id="edad" name="edad">
+            <br>
+            <label for="fdnto"> Fecha de nacimiento: </label>
+                <input type="date" id="fdnto">
+            <br>
+            <label for="hora"> Hora de la cita: </label>
+                <input type="time" id="fdnto">
+            <br>
+            <input style="margin-top: 20px;" type="submit" value="Enviar datos">
+            <div>
+                
+            </div>
+            </form>
+        </div>
+    </div>
+    <br>
+    <a href="index.html">volver</a>
+    <script>
+        function validarFormulario(){
+            let nombre = document.getElementById("nombre");
+            let edad = document.getElementById("edad");
+            if(nombre.value.length == 0){
+                alert("El nombre no puede estar vacio");
+                return false
+            }
+            if(parseInt(edad.value) < 18){
+                alert("Acceso denegado");
+                return false
+            }
+            if(edad.value.length == 0){
+                alert("La edad no puede estar vacia");
+                return false
+            }
+            if(nombre.value.length == 0 || edad.value.length == 0){
+                alert("Debes completar campos nombre y edad");
+                return false
+            }
+                alert("Accediendo a la página");
+                return true
+        }
+    </script>
+</body>
+</html>

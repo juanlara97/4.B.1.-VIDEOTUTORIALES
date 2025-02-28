@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores, funciones y depuración</title>
+</head>
+<body>
+    <button onclick="sumaDeNumeros()">Sumar números</button>
+    <button onclick="parImpar()">Par o impar</button>
+    <br>
+    <a href="index.html">volver</a>
+    <script>
+        function sumaDeNumeros() {
+            let primerNumero = parseInt(prompt("Introduce un número"));   
+            let segundoNumero = parseInt(prompt("Introduce un número"));
+            let resultado = primerNumero + segundoNumero;
+            alert("El resultado de la suma " + primerNumero + " + " + segundoNumero  + " es " + resultado);
+        }
+        function parImpar(){
+            let numero = parseInt(prompt("Escriba un numero"));
+            if (numero % 2 == 0){
+                alert("El numero " + numero + " es par ");
+            }else {
+                alert("El numero " + numero + " NO es par ");
+            }
+        }
+    </script>
+</body>
+</html>

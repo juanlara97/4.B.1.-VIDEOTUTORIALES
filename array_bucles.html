@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="tablaMultiplicar()">Tabla de multiplicar</button>
+    <button onclick="factorial()">Factorial</button>
+    <button onclick="alineacion()">Alineacion</button>
+    <br>
+    <a href="index.html">volver</a>
+    <script>
+       
+        function tablaMultiplicar(){
+            let numero = parseInt(prompt("Escriba un número"));
+            document.write("<table border ='1'>");
+            let resultado = 1;
+            for(let i = 1; i <= 10; i++){
+                resultado = numero * i;
+                document.write("<tr><td>" + numero + " x " + i + "</td>" + "<td>" + resultado + "</td></tr>");
+            }
+            document.write("</table>");
+        }
+        function factorial(){
+            let numero = parseInt(prompt("Escriba un número"));
+            let resultado = 1;
+            for(i = 1; i <= numero; i++){
+                resultado = resultado * i;
+            }
+            alert("El factorial de " + numero + " es " + resultado);
+        }
+        function alineacion(){
+            let alineacion = ['Benzema', 'James', 'Cristiano', 'Messi'];
+            let jugador = parseInt(prompt("Escriba la posicion del jugador"));
+            let resultado = alineacion[jugador];
+            alert(resultado);
+        }
+    </script>
+</body>
+</html>

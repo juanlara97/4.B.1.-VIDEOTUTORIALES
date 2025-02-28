@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de formularios 1</title>
+</head>
+<body>
+    <form action="procesa.php" onsubmit="return validarFormulario()">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+        <br>
+        <label for="edad">Edad:</label>
+        <input type="text" id="edad" name="edad">
+        <br>
+        <input type="submit" value="Enviar datos">
+    </form>
+    <br>
+    <a href="index.html">volver</a>
+    <script>
+        function validarFormulario(){
+            let nombre = document.getElementById("nombre");
+            let edad = document.getElementById("edad");
+            if(nombre.value.length == 0){
+                alert("El nombre no puede estar vacio");
+                return false
+            }
+            if(parseInt(edad.value) < 18){
+                alert("Acceso denegado");
+                return false
+            }
+            if(edad.value.length == 0){
+                alert("La edad no puede estar vacia");
+                return false
+            }
+            if(nombre.value.length == 0 || edad.value.length == 0){
+                alert("Debes completar campos nombre y edad");
+                return false
+            }
+                alert("Accediendo a la página");
+                return true
+        }
+    </script>
+</body>
+</html>

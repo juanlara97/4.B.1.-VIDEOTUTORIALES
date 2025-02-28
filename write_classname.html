@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>write y classname</title>
+    <style>
+        .importante {
+            background-color: aliceblue;
+            font-size: x-large;
+            font-weight: 200;
+        }
+    </style>
+</head>
+<body>
+    <Script>
+        let edad = parseInt(prompt("Dime tu edad"));
+        if(edad < 18){
+            document.write("Acceso denegado");
+        }else{
+            let nombre = prompt("Dime tu nombre");
+            document.write("<h1> Hola " + nombre + "</h1>");
+        }
+        function aplicarClase(){
+           document.getElementById("subtitulo").className = "importante";
+        }
+    </Script>
+    <h2 id="subtitulo">Acceso a contenido</h2>
+    <button onclick="aplicarClase()">Aplicar clase</button>
+    <br>
+    <a href="index.html">volver</a>
+</body>
+</html>

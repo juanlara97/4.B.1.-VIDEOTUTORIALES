@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="titulo">HOLA MUNDO</h1>
+    <div>
+        <img src="images/gato" alt="" id="imagen" width="200" height="300">
+    </div>
+        
+    <br>
+    <Button onclick="cambiarTitulo()">Cambiar titulo</Button>
+    <Button onclick="aumentarAnchoImagen()">&plus;</Button>
+        &larr; &rarr;
+    <Button onclick="disminuirAnchoImagen()">&minus;</Button>
+    <Button onclick="aumentarAlturaImagen()">&plus;</Button>
+        &uarr; &darr;
+    <Button onclick="disminuirAlturaImagen()">&minus;</Button>
+<br>
+    <a href="index.html">volver</a>
+    <script>
+        function cambiarTitulo(){
+            let titulo = document.getElementById("titulo");
+            titulo.innerHTML = "HOLA JUAN";
+        }
+        function aumentarAnchoImagen(){
+            let imagen = document.getElementById("imagen");
+            imagen.width = imagen.width + 10;
+        }
+        function disminuirAnchoImagen(){
+            let imagen = document.getElementById("imagen");
+            imagen.width = imagen.width - 10;
+        }
+        function aumentarAlturaImagen(){
+            let imagen = document.getElementById("imagen");
+            imagen.width = imagen.height + 10;
+        }
+        function disminuirAlturaImagen(){
+            let imagen = document.getElementById("imagen");
+            imagen.width = imagen.height - 10;
+        }
+    </script>
+</body>
+</html>

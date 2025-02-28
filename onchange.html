@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onChange</title>
+</head>
+<body>
+    <form action="">
+        <img src="images/mapa-regional.jpg" id="imagen" width="400" height="400">
+        <br>
+        <label for="provincia">provincias</label>
+        <select id="provincia" onchange="cambiaImagen()">
+            <option value="noselect">Selecciona</option>
+            <option value="cr">Ciudad Real</option>
+            <option value="alb">Albacete</option>
+            <option value="tld">Toledo</option>
+            <option value="cue">Cuenca</option>
+            <option value="gua">Guadalajara</option>
+        </select>
+    </form>
+    <script>
+        function cambiaImagen(){
+            let provincia = document.getElementById("provincia");
+            let imagen = document.getElementById("imagen");
+            if(provincia.value == "noselect"){
+            imagen.src="images/mapa-regional.jpg";
+            }
+            if(provincia.value == "cr"){
+            imagen.src="images/ciu.webp";
+            }
+            if(provincia.value == "alb"){
+            imagen.src="images/albacete.jpg";
+            }
+            if(provincia.value == "tld"){
+            imagen.src="images/toledo.jpg";
+            }
+            if(provincia.value == "cue"){
+            imagen.src="images/cuenca.jpg";
+            }
+            if(provincia.value == "gua"){
+            imagen.src="images/guadalajara.jpg";
+            }
+        }
+    </script>
+    <a href="index.html">volver</a>
+   </body>
+</html>
