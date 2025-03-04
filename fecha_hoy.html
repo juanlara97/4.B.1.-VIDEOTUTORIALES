@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fecha de hoy</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        #caja{
+            background-color: gray;
+            border-radius: 15px;
+            padding: 20px;
+        }
+        label{
+            width: 30%;
+            display: inline-block
+        }
+        input{
+            width: 70%;
+            border-radius: 5px;
+            border-color: white;
+        }
+        #aviso{
+            color: red;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulario de inscripción</h1>
+    <h6 id="aviso"></h6>
+    <div id="cajon">
+        <div id="caja">
+            <form action="procesa.php" onsubmit="return validarFormulario()">
+            <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre">
+            <label for="apellido">Apellidos:</label>
+                <input type="text" id="apellido" name="apellido">
+            <br>
+            <label for="edad">Edad:</label>
+                <input type="text" id="edad" name="edad">
+            <br>
+            <label for="fdnto"> Fecha de nacimiento: </label>
+                <input type="date" id="fdnto">
+            <br>
+            <label for="hora"> Hora de la cita: </label>
+                <input type="time" id="hora_cita">
+            <br>
+            <input style="margin-top: 20px;" type="submit" value="Enviar datos">
+            <div>
+                
+            </div>
+            </form>
+        </div>
+    </div>
+    <br>
+    <a href="index.html">volver</a>
+    <script>
+        function validarFormulario(){
+            let nombre = document.getElementById("nombre");
+            let edad = document.getElementById("edad");
+            let aviso = document.getElementById("aviso")
+            let fecha = document.getElementById("fdnto")
+            if(nombre.value.length == 0){
+                aviso.innerHTML = "El nombre no puede estar vacio";
+                nombre.focus;
+                return false;
+            }
+            if(parseInt(edad.value) < 18){
+                aviso.innerHTML = "Acceso denegado, menor de 18";
+                edad.focus;
+                return false;
+            }
+            if(edad.value.length == 0){
+                aviso.innerHTML = "La edad no puede estar vacia";
+                edad.focus;
+                return false;
+            }
+            if(fecha.value.length == 0){
+                aviso.innerHTML = "Debes completar el campo fecha";
+                fecha.focus;
+                return false;
+            }
+            let fechaDeHoy = new date();
+            if(fecha.value.length == 0){
+                aviso.innerHTML = "Debes completar el campo fecha";
+                fecha.focus;
+                return false;
+            }
+                return true;
+        }
+    </script>
+</body>
+</html>

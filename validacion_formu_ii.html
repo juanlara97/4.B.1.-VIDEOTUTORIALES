@@ -12,7 +12,6 @@
             background-color: gray;
             border-radius: 15px;
             padding: 20px;
-            display: flex;
         }
         label{
             width: 30%;
@@ -23,9 +22,17 @@
             border-radius: 5px;
             border-color: white;
         }
+        #aviso{
+            color: red;
+        }
+        h1{
+            text-align: center;
+        }
     </style>
 </head>
 <body>
+    <h1>Formulario de inscripción</h1>
+    <h6 id="aviso"></h6>
     <div id="cajon">
         <div id="caja">
             <form action="procesa.php" onsubmit="return validarFormulario()">
@@ -41,7 +48,7 @@
                 <input type="date" id="fdnto">
             <br>
             <label for="hora"> Hora de la cita: </label>
-                <input type="time" id="fdnto">
+                <input type="time" id="hora_cita">
             <br>
             <input style="margin-top: 20px;" type="submit" value="Enviar datos">
             <div>
@@ -56,24 +63,29 @@
         function validarFormulario(){
             let nombre = document.getElementById("nombre");
             let edad = document.getElementById("edad");
+            let aviso = document.getElementById("aviso")
+            let fecha = document.getElementById("fdnto")
             if(nombre.value.length == 0){
-                alert("El nombre no puede estar vacio");
-                return false
+                aviso.innerHTML = "El nombre no puede estar vacio";
+                nombre.focus;
+                return false;
             }
             if(parseInt(edad.value) < 18){
-                alert("Acceso denegado");
-                return false
+                aviso.innerHTML = "Acceso denegado, menor de 18";
+                edad.focus;
+                return false;
             }
             if(edad.value.length == 0){
-                alert("La edad no puede estar vacia");
-                return false
+                aviso.innerHTML = "La edad no puede estar vacia";
+                edad.focus;
+                return false;
             }
-            if(nombre.value.length == 0 || edad.value.length == 0){
-                alert("Debes completar campos nombre y edad");
-                return false
+            if(fecha.value.length == 0){
+                aviso.innerHTML = "Debes completar el campo fecha";
+                fecha.focus;
+                return false;
             }
-                alert("Accediendo a la página");
-                return true
+                return true;
         }
     </script>
 </body>
