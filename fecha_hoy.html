@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,13 +71,7 @@
             <form action="procesa.php" onsubmit="return validarFormulario()">
             <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre">
-            <label for="apellido">Apellidos:</label>
-                <input type="text" id="apellido" name="apellido">
-            <br>
-            <label for="edad">Edad:</label>
-                <input type="text" id="edad" name="edad">
-            <br>
-            <label for="fdnto"> Fecha de nacimiento: </label>
+            <label for="fdnto"> Fecha de cita: </label>
                 <input type="date" id="fdnto">
             <br>
             <label for="hora"> Hora de la cita: </label>
@@ -95,31 +88,18 @@
     <a href="index.html">volver</a>
     <script>
         function validarFormulario(){
-            let nombre = document.getElementById("nombre");
-            let edad = document.getElementById("edad");
+        
             let aviso = document.getElementById("aviso")
             let fecha = document.getElementById("fdnto")
-            if(nombre.value.length == 0){
-                aviso.innerHTML = "El nombre no puede estar vacio";
-                nombre.focus;
-                return false;
-            }
-            if(parseInt(edad.value) < 18){
-                aviso.innerHTML = "Acceso denegado, menor de 18";
-                edad.focus;
-                return false;
-            }
-            if(edad.value.length == 0){
-                aviso.innerHTML = "La edad no puede estar vacia";
-                edad.focus;
-                return false;
-            }
-            if(fecha.value.length == 0){
-                aviso.innerHTML = "Debes completar el campo fecha";
+          
+            var fechaHoy = new Date();
+            var fechaHoyStr = fechaHoy.toISOString();
+            fechaHoyStr = fechaHoyStr.slice(0,10)
+            if(fecha.value < fechaHoyStr){
+                aviso.innerHTML = "Debes elegir una fecha actual";
                 fecha.focus;
                 return false;
             }
-            let fechaDeHoy = new date();
             if(fecha.value.length == 0){
                 aviso.innerHTML = "Debes completar el campo fecha";
                 fecha.focus;

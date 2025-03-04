@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" onblur="ponMayuscula()">
+        <br>
+        <label for="apellido">Apellido: </label>
+        <input type="text" id="apellido">
+        <br>
+        <input type="submit" value="Enviar datos">
+    </form>
+    <script>
+        function ponMayuscula(){
+            var nombre = document.getElementById("nombre");
+           nombre.value = nombre.value.toLocaleUpperCase();
+        }
+    </script>
+</body>
+</html>

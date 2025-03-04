@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio muestra lista de provincias</title>
+    <style>
+        #provincia {
+            visibility: hidden;
+        }
+        #titulo{
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <h1>Provincia de envío</h1>
+    <form action="">
+        <label for="pais">Pais: </label>
+        <select name="pais" id="pais" onchange="return visibilidad()">
+            <option value="No select">No select</option>
+            <option value="España">España</option>
+            <option value="Colombia">Colombia</option>
+            <option value="Rusia">Rusia</option>
+            <option value="Afganistán">Afganistan</option>
+            <option value="Turquía">Turquía</option>
+            <option value="Alemania">Alemania</option>
+            <option value="China">China</option>
+            <option value="Francia">Francia</option>
+            <option value="Portugal">Portugal</option>
+        </select>
+        <label for="provincia" id="titulo">Provincia</label>
+        <select name="provincia" id="provincia">
+            <option value="Araba/Álava">Araba/Álava</option>
+            <option value="Albacete">Albacete</option>
+            <option value="Alicante">Alicante</option>
+            <option value="Almería">Almería</option>
+            <option value="Asturias">Asturias/Asturies	</option>
+            <option value="Ávila">Ávila</option>
+            <option value="Badajoz">Badajoz</option>
+            <option value="Barcelona">Barcelona</option>
+            <option value="Burgos">Burgos</option>
+            <option value="Cáceres">Cáceres</option>
+        </select>
+    </form>
+    <script>
+        function visibilidad(){
+            var pais = document.getElementById("pais").value;
+            if(pais == "España"){
+                document.getElementById("provincia").style.visibility = "visible";
+                document.getElementById("titulo").style.visibility = "visible";
+                return true
+            }else
+                document.getElementById("provincia").style.visibility = "hidden";
+                document.getElementById("titulo").style.visibility = "hidden";
+                return false
+        }
+    </script>
+    <a href="index.html">volver</a>
+</body>
+</html>

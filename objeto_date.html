@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodos de las fechas</title>
+     <script>
+        function procesaFecha(){
+            var fechaSrt = document.getElementById("fecha").value;
+            var fechaDate = new Date(fechaSrt);
+            var mes = fechaDate.getMonth();
+            var mesName = mesDelAnio(parseInt (mes +1))
+            alert(mesName).value
+        }
+        function mesDelAnio(mes){
+            var resultado = ""
+            if(mes == 1){
+                resultado = "Enero";
+            }
+            if(mes == 2){
+                resultado = "Febrero";
+            }
+            if(mes == 3){
+                resultado ="Marzo";
+            }
+            if(mes == 4){
+                resultado ="Abril";
+            }
+            if(mes == 5){
+                resultado ="Mayo";
+            }
+            if(mes == 6){
+                resultado ="Junio";
+            }
+            if(mes == 7){
+                resultado ="Julio";
+            }
+            if(mes == 8){
+                resultado ="Agosto";
+            }
+            if(mes == 9){
+                resultado ="Septiembre";
+            }
+            if(mes == 10){
+                resultado ="Octubre";
+            }
+            if(mes == 11){
+                resultado ="Noviembre";
+            } 
+            if(mes == 12){
+                resultado ="Diciembre";
+            } 
+            return resultado
+        }
+    </script>
+</head>
+<body>
+    <h1>Metodos de las fechas</h1>
+    <label for="fecha">fecha</label>
+    <input type="date" name="fecha" id="fecha"> 
+    <button onclick="procesaFecha()">Procesa fecha</button>
+    <br>
+    <a href="index.html">volver</a>
+</body>
+</html>
